@@ -1,0 +1,14 @@
+{% extends 'inicio.html' %}
+{% load bootstrap4 %}
+
+{%block titulos%}Agregar Incidencias{%endblock%}
+
+{%block cuerpo%}
+<form method="POST">
+    {%csrf_token%}
+    {% bootstrap_form formulario %}
+    {% buttons submit="Guardar" reset="Cancelar" %}
+        <input class="btn btn-primary" type="submit" value="Guardar"/>
+    {%endbuttons%}
+</form>
+{%endblock%}

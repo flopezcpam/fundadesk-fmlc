@@ -1,0 +1,36 @@
+{% extends 'inicio.html' %}
+{% load bootstrap4 %}
+
+{%block titulos%}Listar Incidencias{%endblock%}
+
+{%block cuerpo%}
+
+<table border="2">
+    <th>NUMERO</th>
+    <th>CLIENTE</th>
+    <th>TIPO</th>
+    <th>DESCRIPCION</th>
+    <th>DETALLE</th>
+    <th>ESTADO</th>
+    <th>APERTURA</th>
+    <th>MODIFICADO</th>
+    <th>CIERRE</th>
+    <th>RESPONSABLE</th>
+    <tbody>
+        {% for incidencia in incidencias%}
+            <tr>
+                <td>{{incidencia.inc_id}}</td>
+                <td>{{incidencia.inc_usuario}}</td>
+                <td>{{incidencia.inc_tipo}}</td>
+                <td>{{incidencia.inc_descripcion}}</td>
+                <td>{{incidencia.inc_detalle}}</td>
+                <td>{{incidencia.inc_estado}}</td>
+                <td>{{incidencia.inc_fecha_apertura}}</td>
+                <td>{{incidencia.inc_fecha_modificacion}}</td>
+                <td>{{incidencia.inc_cierre}}</td>
+                <td>{{incidencia.inc_responsable}}</td>
+            </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}
