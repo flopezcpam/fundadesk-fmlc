@@ -1,0 +1,1 @@
+web: gunicorn FUNDADESK.wsgi --log-file -
